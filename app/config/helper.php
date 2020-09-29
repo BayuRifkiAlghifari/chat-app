@@ -12,15 +12,15 @@
 
 	function post($post)
 	{
-		$_POST["{$post}"];
+		return $_POST["{$post}"];
 	}
 
 	function sess($sess)
 	{
-		$_SESSION["{$sess}"];
+		return $_SESSION["{$sess}"];
 	}
 
 	function get($get)
 	{
-		$_GET["{$get}"];
+		return $_GET["{$get}"];
 	}

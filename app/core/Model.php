@@ -30,12 +30,12 @@
 			$field 	= implode(',',$f1);
 			$row 	= implode(',',$r1);
 
-			$query 	= $this->db->query("INSERT INTO $tabel($field) VALUES ($row)");
+			$query 	= $this->db->query("INSERT INTO {$tabel}({$field}) VALUES ({$row})");
 
 			return $query;
 		}
 	
-		public function update($id_name,$id,$tabel,$data)
+		public function update($tabel_id,$tabel,$data)
 		{
 			$r1 	= array();
 
@@ -44,16 +44,24 @@
 				array_push($r1,$f."="."'".$r."'");
 			}
 
+			$key 	= array_keys($tabel_id);
+			$key 	= $key[0];
+			$id 	= $tabel_id[$key];
+
 			$row 	= implode(',',$r1);
 
-			$query 	= $this->db->query("UPDATE $tabel SET $row WHERE $id_name='$id'");
+			$query 	= $this->db->query("UPDATE {$tabel} SET {$row} WHERE {$id_name}='{$id}'");
 
 			return $query;
 		}
 
-		public function delete($id_name,$id,$table)
+		public function delete($tabel_id,$table)
 		{
-			$query 	= $this->db->query("DELETE FROM $table WHERE $id_name='$id'");
+			$key 	= array_keys($tabel_id);
+			$key 	= $key[0];
+			$id 	= $tabel_id[$key];
+
+			$query 	= $this->db->query("DELETE FROM {$table} WHERE {$key}='{$id}'");
 
 			return $query;		
 		}
