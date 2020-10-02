@@ -13,7 +13,7 @@
 
 		public function model($model)
 		{
-			$this->models 		= $model;
+			$this->models 		= ($this->models === '') ? $model : $this->models;
 
 			require_once '../app/models/' . $this->models . '.php';
 
@@ -22,7 +22,7 @@
 
 		public function libs($lib)
 		{
-			$this->liblaries 	= $lib;
+			$this->liblaries 	= ($this->liblaries === '') ? $lib : $this->liblaries;
 
 			require_once '../app/liblaries/' . $this->liblaries . '.php';
 

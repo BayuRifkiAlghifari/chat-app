@@ -50,7 +50,7 @@
 
 			$row 	= implode(',',$r1);
 
-			$query 	= $this->db->query("UPDATE {$tabel} SET {$row} WHERE {$id_name}='{$id}'");
+			$query 	= $this->db->query("UPDATE {$tabel} SET {$row} WHERE {$key}='{$id}'");
 
 			return $query;
 		}
@@ -64,6 +64,13 @@
 			$query 	= $this->db->query("DELETE FROM {$table} WHERE {$key}='{$id}'");
 
 			return $query;		
+		}
+
+		public function insert_id()
+		{
+			$query 	= $this->db->insert_id;
+
+			return $query;
 		}
 
 		public function libs($lib)

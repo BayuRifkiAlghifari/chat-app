@@ -10,7 +10,7 @@
 				'cost' => $round
 			);
 
-			return password_hash($password, PASSWORD_DEFAULT,$config);
+			return password_hash($password, PASSWORD_DEFAULT, $config);
 		}
 
 		public function bcrypt_hash($password,$round = 10)
@@ -19,7 +19,7 @@
 				'cost' => $round
 			);
 
-			return password_hash($password, PASSWORD_BCRYPT,$config);
+			return password_hash($password, PASSWORD_BCRYPT, $config);
 		}
 
 		public function hash_check($password,$hashed_password)

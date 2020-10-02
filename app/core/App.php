@@ -10,6 +10,8 @@
 		{
 			$url = $this->parseURL();
 
+			$url[0] = ucfirst($url[0]);
+			
 			// Controller cek
 			if(file_exists('../app/controllers/' . $url[0] . '.php'))
 			{
