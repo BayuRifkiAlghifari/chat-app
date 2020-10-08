@@ -8,6 +8,9 @@
 
 		public function view($view, $data = [])
 		{
+			// Array key to new variable
+			extract($data, EXTR_PREFIX_SAME, "wddx");
+
 			require_once '../app/views/' . $view . '.php';
 		}
 
