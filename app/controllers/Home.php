@@ -4,11 +4,7 @@
 	{
 		public function index()
 		{
-			// $this->view() untuk load view
-			// $this->model() untuk load model
-			// $this->libs() untuk load liblaries
-
-			$data['app_name'] = 'Contoh';
+			$data['list_user'] = $this->model('m_user')->get_user();
 
 			$this->view('home', $data);
 		}

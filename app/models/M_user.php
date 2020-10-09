@@ -6,9 +6,13 @@
 		{
 			// Wajib Ada
 			parent::__construct();
+		}
 
-			// $this->store('Nama table', 'Data array')
-			// $this->update('("Nama row id" => 'ID Value')', 'Nama table', 'Data array')
-			// $this->delete('("Nama row id" => 'ID Value')', 'Nama table')
+		public function get_user()
+		{
+			$sql = "SELECT * FROM user";
+			$exe = $this->db->query($sql);
+
+			return $exe;
 		}
 	}
